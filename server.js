@@ -30,7 +30,6 @@ const projectRoutes = require("./routes/projects");
 const handoffRoutes = require("./routes/handoff");
 const foodRoutes = require("./routes/food");
 const itemRoutes = require("./routes/items");
-const dashboardRoutes = require("./routes/dashboard");
 
 app.get("/", (req, res) => res.send("SwapShop API is running 🚀"));
 
@@ -43,7 +42,6 @@ const { router: swapRoutes } = require("./routes/swap");
 app.use("/", swapRoutes);
 const dashboardRoutes = require("./routes/dashboard");
 app.use("/dashboard", dashboardRoutes);          // Unified item listing (Day 8)
-app.use("/dashboard", dashboardRoutes); // Impact metrics + leaderboard (Day 9)
 
 // ── Start ─────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
