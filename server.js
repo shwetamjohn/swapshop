@@ -39,6 +39,8 @@ app.use("/projects", projectRoutes);    // CRUD + search for Relay Board
 app.use("/projects", handoffRoutes);    // Handoff protocol on top of projects
 app.use("/food", foodRoutes);           // Proximity Pulse + Dibs system
 app.use("/items", itemRoutes);
+const { router: swapRoutes } = require("./routes/swap");
+app.use("/", swapRoutes);
 const dashboardRoutes = require("./routes/dashboard");
 app.use("/dashboard", dashboardRoutes);          // Unified item listing (Day 8)
 app.use("/dashboard", dashboardRoutes); // Impact metrics + leaderboard (Day 9)
