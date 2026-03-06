@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
+const cors = require("cors");
+app.use(cors()); // allow all origins for now
 app.use(express.json());
 
 // ── Environment validation ────────────────────────────────────────────────────
