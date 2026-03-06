@@ -38,7 +38,9 @@ app.use("/auth", authRoutes);           // POST /auth/signup, POST /auth/login
 app.use("/projects", projectRoutes);    // CRUD + search for Relay Board
 app.use("/projects", handoffRoutes);    // Handoff protocol on top of projects
 app.use("/food", foodRoutes);           // Proximity Pulse + Dibs system
-app.use("/items", itemRoutes);          // Unified item listing (Day 8)
+app.use("/items", itemRoutes);
+const dashboardRoutes = require("./routes/dashboard");
+app.use("/dashboard", dashboardRoutes);          // Unified item listing (Day 8)
 app.use("/dashboard", dashboardRoutes); // Impact metrics + leaderboard (Day 9)
 
 // ── Start ─────────────────────────────────────────────────────────────────────
