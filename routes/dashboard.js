@@ -13,7 +13,7 @@ router.get("/", authMiddleware, async (req, res) => {
 
     // Projects this user created
     const myProjects = await Project.aggregate([
-      { $match: { authorId: { $toObjectId: userId } } },
+      { $match: { authorId: userId } },
       { $group: { _id: "$status", count: { $sum: 1 } } },
     ]);
 
